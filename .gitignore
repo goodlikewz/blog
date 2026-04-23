@@ -1,0 +1,23 @@
+# IDE
+.idea/
+*.iml
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java
+blog-server/target/
+
+# Node
+blog-web/node_modules/
+blog-web/dist/
+blog-web/.npm-cache/
+
+# Env
+.env
+.env.local
