@@ -21,7 +21,8 @@ CREATE TABLE IF NOT EXISTS `blog_category` (
   `sort` INT NOT NULL DEFAULT 0 COMMENT '排序值',
   `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_blog_category_name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='文章分类表';
 
 CREATE TABLE IF NOT EXISTS `blog_tag` (
@@ -76,8 +77,8 @@ CREATE TABLE IF NOT EXISTS `blog_config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='系统配置表';
 
 INSERT INTO `blog_user` (`username`, `password`, `nickname`, `status`)
-VALUES ('admin', '$2a$10$WQfQfQm8u6yxv1Gf5uW0yuQIvQEdF8VQmHg56k97X3CJidFG8sRP2', '管理员', 1)
-ON DUPLICATE KEY UPDATE `nickname` = VALUES(`nickname`), `status` = VALUES(`status`);
+VALUES ('admin', '$2a$10$LxRehIGTMUupPPu9AZFt9uxxrB/oCDyHCzU2uuoePq3Jw3Pj4X2Zy', '管理员', 1)
+ON DUPLICATE KEY UPDATE `password` = VALUES(`password`), `nickname` = VALUES(`nickname`), `status` = VALUES(`status`);
 
 INSERT INTO `blog_config` (`config_key`, `config_value`, `description`)
 VALUES
@@ -105,4 +106,3 @@ VALUES
 ('SQL优化'),
 ('面试')
 ON DUPLICATE KEY UPDATE `name` = VALUES(`name`);
-
