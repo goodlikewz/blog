@@ -3,6 +3,9 @@ package com.learning.blog.dto;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
+/**
+ * 后台登录请求参数。
+ */
 @Data
 public class AdminLoginRequest {
 

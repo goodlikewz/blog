@@ -7,6 +7,9 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+/**
+ * 后台管理员实体。
+ */
 @Data
 @TableName("blog_user")
 public class BlogUser {
