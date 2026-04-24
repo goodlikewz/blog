@@ -1,5 +1,6 @@
 package com.learning.blog.controller.portal;
 
+import com.learning.blog.common.ApiResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,12 +14,10 @@ import java.util.Map;
 public class HealthController {
 
     @GetMapping
-    public Map<String, Object> health() {
+    public ApiResponse<Map<String, Object>> health() {
         Map<String, Object> result = new LinkedHashMap<>();
-        result.put("code", 200);
-        result.put("message", "后端服务启动成功");
+        result.put("status", "UP");
         result.put("time", LocalDateTime.now().toString());
-        return result;
+        return ApiResponse.success("后端服务启动成功", result);
     }
 }
-

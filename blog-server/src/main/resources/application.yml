@@ -9,6 +9,8 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 3000
 
 mybatis-plus:
   configuration:
@@ -19,4 +21,3 @@ blog:
   jwt:
     secret: learning-blog-secret-key-learning-blog-secret-key
     expire-hours: 24
-

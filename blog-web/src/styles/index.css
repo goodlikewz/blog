@@ -118,8 +118,25 @@ a {
   line-height: 1.7;
 }
 
+.login-tip {
+  margin-bottom: 20px;
+}
+
 .full-width {
   width: 100%;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
@@ -131,5 +148,8 @@ a {
   .login-card h1 {
     font-size: 28px;
   }
-}
 
+  .dashboard-header {
+    flex-direction: column;
+  }
+}
